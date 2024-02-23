@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dokp6ay50rwpt"]
+
+[ext_resource type="Shader" path="res://assets/scenes/Level1mainbackgroundshader.gdshader" id="1_3wsx2"]
+[ext_resource type="Texture2D" uid="uid://bwtliepf0hspx" path="res://assets/scenes/Summer2.png" id="1_armpt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4euwt"]
+shader = ExtResource("1_3wsx2")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed_scale = 0.05
+
+[node name="Node2D" type="Node2D"]
+z_index = -1
+metadata/_edit_vertical_guides_ = [-221.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_4euwt")
+offset_left = -15.0
+offset_top = -555.0
+offset_right = 2289.0
+offset_bottom = 741.0
+texture = ExtResource("1_armpt")
+stretch_mode = 1

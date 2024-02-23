@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://qiqrf2ni5cc7"]
+
+[ext_resource type="Script" path="res://assets/scripts/mob1.gd" id="1_d2rsa"]
+[ext_resource type="Texture2D" uid="uid://dhbn1vebjv3w7" path="res://assets/sprite/the_choppa1.png" id="2_jsisi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mo0af"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jsisi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3yyb"]
+size = Vector2(198, 69)
+
+[node name="Mob" type="RigidBody2D"]
+z_index = 1
+z_as_relative = false
+position = Vector2(-3, 3)
+collision_layer = 3
+collision_mask = 0
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_d2rsa")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_mo0af")
+speed_scale = 0.045
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 6.5)
+shape = SubResource("RectangleShape2D_r3yyb")

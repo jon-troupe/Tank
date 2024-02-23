@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpl07a2c0n820"]
+
+[ext_resource type="Script" path="res://assets/scripts/bullet_level_1.gd" id="1_tyu4l"]
+[ext_resource type="Texture2D" uid="uid://cd7y68v0k0w87" path="res://assets/sprite/tank_bullet.png" id="1_vppsy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01qln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vppsy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm7fm"]
+size = Vector2(15, 38)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+z_index = 2
+mass = 0.01
+gravity_scale = 0.0
+script = ExtResource("1_tyu4l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(18, 26)
+sprite_frames = SubResource("SpriteFrames_01qln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.5, 26)
+shape = SubResource("RectangleShape2D_tm7fm")

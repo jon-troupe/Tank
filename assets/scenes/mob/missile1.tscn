@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://5sk5ofd0jupu"]
+
+[ext_resource type="Texture2D" uid="uid://bv43b5ejspx41" path="res://assets/sprite/missile.png" id="1_2the4"]
+[ext_resource type="Script" path="res://assets/scripts/missile1.gd" id="1_wmwyd"]
+[ext_resource type="Texture2D" uid="uid://dk7cch2vq600d" path="res://assets/sprite/missile_explosion.png" id="3_xa381"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shkxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xa381")
+}],
+"loop": false,
+"name": &"Explode",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2the4")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w23mp"]
+radius = 1.40978
+height = 6.78199
+
+[node name="Missile" type="RigidBody2D"]
+position = Vector2(39, 30)
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("1_wmwyd")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.442447, 0.38714)
+sprite_frames = SubResource("SpriteFrames_shkxd")
+animation = &"Explode"
+frame_progress = 1.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+z_as_relative = false
+rotation = 0.706207
+scale = Vector2(3.39276, 3.79642)
+shape = SubResource("CapsuleShape2D_w23mp")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

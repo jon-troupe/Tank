@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf1q3koyclvwi"]
+
+[ext_resource type="Texture2D" uid="uid://ddjiptpwtfhdy" path="res://assets/sprite/tank.png" id="1_npv7o"]
+[ext_resource type="Script" path="res://assets/scenes/player.gd" id="1_s56kt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wh50k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_npv7o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp3w"]
+radius = 33.7339
+height = 104.0
+
+[node name="Player" type="Area2D"]
+position = Vector2(283, 198)
+script = ExtResource("1_s56kt")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 0)
+scale = Vector2(0.504, 0.5)
+sprite_frames = SubResource("SpriteFrames_wh50k")
+animation = &"idle"
+frame_progress = 0.00345589
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.19209e-07, -4)
+rotation = -1.56886
+scale = Vector2(0.504, 0.5)
+shape = SubResource("CapsuleShape2D_6xp3w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

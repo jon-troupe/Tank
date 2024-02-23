@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://8u0himu8njsa"]
+
+[ext_resource type="Script" path="res://assets/scenes/main.gd" id="1_00xe4"]
+[ext_resource type="PackedScene" uid="uid://bf1q3koyclvwi" path="res://assets/scenes/player.tscn" id="1_s5fe3"]
+[ext_resource type="PackedScene" uid="uid://dasnmx6tbajoe" path="res://assets/scenes/mob_1.tscn" id="3_hampe"]
+[ext_resource type="PackedScene" uid="uid://dokp6ay50rwpt" path="res://assets/scenes/Level1.tscn" id="4_keevh"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_00xe4")
+
+[node name="Player" parent="." instance=ExtResource("1_s5fe3")]
+position = Vector2(240, 450)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="Mob1Path" parent="." instance=ExtResource("3_hampe")]
+position = Vector2(32, 40)
+
+[node name="Node2D" parent="." instance=ExtResource("4_keevh")]
+position = Vector2(8, -128)
+
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
