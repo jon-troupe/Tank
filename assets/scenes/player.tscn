@@ -445,12 +445,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("111_tgah7")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("112_4y6pc")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 15.0
+"speed": 60.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp3w"]
@@ -469,7 +469,7 @@ position = Vector2(3, 0)
 scale = Vector2(0.1, 0.097)
 sprite_frames = SubResource("SpriteFrames_wh50k")
 animation = &"idle"
-frame_progress = 0.932064
+frame_progress = 0.949819
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 11)
