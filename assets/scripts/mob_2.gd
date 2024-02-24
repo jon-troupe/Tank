@@ -12,7 +12,6 @@ func _process(delta):
 	pass
 
 func hit():
-	print("test")
 	hp -= 1
 	if hp <= 0:
 		queue_free()

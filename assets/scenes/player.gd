@@ -25,13 +25,18 @@ func _process(delta):
 			shoot()
 			cooldown_timer = 0
 
-	# Player movement
+	# Player movement, changes animation speed appropriately for wheel movement when pressed and back to idle when released
 	var player_velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
 		player_velocity.x += 1
+		$AnimatedSprite2D.speed_scale = 2
+	if Input.is_action_just_released("move_right"):
+		$AnimatedSprite2D.speed_scale = 1
 	if Input.is_action_pressed("move_left"):
 		player_velocity.x -= 1
-		
+		$AnimatedSprite2D.speed_scale = -1
+	if Input.is_action_just_released("move_left"):
+		$AnimatedSprite2D.speed_scale = 1
 		
 	# Player movement animation + speed
 	if player_velocity.x > 0 || player_velocity.x < 0:
