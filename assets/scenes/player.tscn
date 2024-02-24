@@ -1,46 +1,491 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf1q3koyclvwi"]
+[gd_scene load_steps=117 format=3 uid="uid://bf1q3koyclvwi"]
 
-[ext_resource type="Texture2D" uid="uid://ddjiptpwtfhdy" path="res://assets/sprite/tank.png" id="1_npv7o"]
 [ext_resource type="Script" path="res://assets/scenes/player.gd" id="1_s56kt"]
 [ext_resource type="PackedScene" uid="uid://dpl07a2c0n820" path="res://assets/scenes/bullet_level_1.tscn" id="2_0r83j"]
+[ext_resource type="Texture2D" uid="uid://cyscblrqkanjr" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00086.png" id="3_34f8r"]
+[ext_resource type="Texture2D" uid="uid://dwjiurxbj7wxi" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00087.png" id="4_ngje6"]
+[ext_resource type="Texture2D" uid="uid://dj7j4wkrbkxeg" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00088.png" id="5_d3dm4"]
+[ext_resource type="Texture2D" uid="uid://bxja37bi363hm" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00089.png" id="6_28nrm"]
+[ext_resource type="Texture2D" uid="uid://cq2kpqck4qqno" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00090.png" id="7_rghdj"]
+[ext_resource type="Texture2D" uid="uid://uicwxpskliba" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00091.png" id="8_scqm7"]
+[ext_resource type="Texture2D" uid="uid://ri2j3sfepxtx" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00092.png" id="9_vomii"]
+[ext_resource type="Texture2D" uid="uid://dup8ipghtfodu" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00093.png" id="10_e8dyb"]
+[ext_resource type="Texture2D" uid="uid://cjjox8tbkiyut" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00094.png" id="11_lry53"]
+[ext_resource type="Texture2D" uid="uid://dlikhwetbicuu" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00095.png" id="12_seuil"]
+[ext_resource type="Texture2D" uid="uid://dixk0owe0m2t0" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00096.png" id="13_ctfd0"]
+[ext_resource type="Texture2D" uid="uid://c4vpiuocoyllq" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00097.png" id="14_0lnaa"]
+[ext_resource type="Texture2D" uid="uid://epd4il0hkswo" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00098.png" id="15_hqqdj"]
+[ext_resource type="Texture2D" uid="uid://oaysvvqude52" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00099.png" id="16_g6mx4"]
+[ext_resource type="Texture2D" uid="uid://de4dsq32vxliq" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00100.png" id="17_jqb6t"]
+[ext_resource type="Texture2D" uid="uid://dgfos8l3cwjt1" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00101.png" id="18_285gd"]
+[ext_resource type="Texture2D" uid="uid://3e7erish174r" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00102.png" id="19_018o3"]
+[ext_resource type="Texture2D" uid="uid://cniq3mlkcpjpc" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00103.png" id="20_n5ad1"]
+[ext_resource type="Texture2D" uid="uid://ctjjugbpmbklu" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00104.png" id="21_1txrg"]
+[ext_resource type="Texture2D" uid="uid://bikc6e3t8q83o" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00105.png" id="22_ucp70"]
+[ext_resource type="Texture2D" uid="uid://ysm288sq6n6j" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00106.png" id="23_fidsy"]
+[ext_resource type="Texture2D" uid="uid://cda588ds1r7lf" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00107.png" id="24_v5nfr"]
+[ext_resource type="Texture2D" uid="uid://cj8upgkq0wiwl" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00108.png" id="25_6xh22"]
+[ext_resource type="Texture2D" uid="uid://dih1m3kdspb4e" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00109.png" id="26_6qs3v"]
+[ext_resource type="Texture2D" uid="uid://caemib7kjdlrx" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00110.png" id="27_ud0nu"]
+[ext_resource type="Texture2D" uid="uid://cyyrxahch3mf" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00111.png" id="28_gkla1"]
+[ext_resource type="Texture2D" uid="uid://fkwekp0u8tje" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00112.png" id="29_nh2o3"]
+[ext_resource type="Texture2D" uid="uid://5kpaka8o71cw" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00113.png" id="30_2qy73"]
+[ext_resource type="Texture2D" uid="uid://dl84lyt4jopjv" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00114.png" id="31_i8qks"]
+[ext_resource type="Texture2D" uid="uid://dflqqrfpcyagi" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00115.png" id="32_q6csv"]
+[ext_resource type="Texture2D" uid="uid://d1ota2l8jbqau" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00116.png" id="33_v0rjj"]
+[ext_resource type="Texture2D" uid="uid://ds1pfkhi5kl3j" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00117.png" id="34_f01sr"]
+[ext_resource type="Texture2D" uid="uid://bd30hpkr33dna" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00118.png" id="35_6rln6"]
+[ext_resource type="Texture2D" uid="uid://ch45qduftcn87" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00119.png" id="36_xuaqn"]
+[ext_resource type="Texture2D" uid="uid://w0a43ftehgx5" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00120.png" id="37_0aetv"]
+[ext_resource type="Texture2D" uid="uid://cbtbffqu46myx" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00121.png" id="38_c31iq"]
+[ext_resource type="Texture2D" uid="uid://bgd1ss7aoow84" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00122.png" id="39_gqxro"]
+[ext_resource type="Texture2D" uid="uid://oiptynp61fu6" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00123.png" id="40_l77lu"]
+[ext_resource type="Texture2D" uid="uid://ctmpmc713hk6h" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00124.png" id="41_nvu0i"]
+[ext_resource type="Texture2D" uid="uid://bi83cirnfxxtl" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00125.png" id="42_p8f75"]
+[ext_resource type="Texture2D" uid="uid://dijat22g5wss3" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00126.png" id="43_8hd68"]
+[ext_resource type="Texture2D" uid="uid://cjcpg1cpe0iqn" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00127.png" id="44_qyc2o"]
+[ext_resource type="Texture2D" uid="uid://0c7bdim6fe8t" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00128.png" id="45_m4jkp"]
+[ext_resource type="Texture2D" uid="uid://btiys2k56ayh6" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00129.png" id="46_v1cvt"]
+[ext_resource type="Texture2D" uid="uid://dy28ijdywp3sg" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00130.png" id="47_8wq26"]
+[ext_resource type="Texture2D" uid="uid://dhstl8x7yqqy" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00131.png" id="48_i7ih6"]
+[ext_resource type="Texture2D" uid="uid://csx3i5hry77q5" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00132.png" id="49_80psg"]
+[ext_resource type="Texture2D" uid="uid://babkwbbxadpui" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00133.png" id="50_xuc5c"]
+[ext_resource type="Texture2D" uid="uid://dj6tg0qwi4gc8" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00134.png" id="51_82kdb"]
+[ext_resource type="Texture2D" uid="uid://du7xb8wvbqnoo" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00135.png" id="52_qgp0p"]
+[ext_resource type="Texture2D" uid="uid://bn0cs7r8gdn4n" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00136.png" id="53_mvy2v"]
+[ext_resource type="Texture2D" uid="uid://d1t3yuceuckvi" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00137.png" id="54_anrug"]
+[ext_resource type="Texture2D" uid="uid://byl0m32ct2umf" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00138.png" id="55_ims4q"]
+[ext_resource type="Texture2D" uid="uid://csiffy6yxl3eg" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00139.png" id="56_ndwuu"]
+[ext_resource type="Texture2D" uid="uid://bjvninxhntft7" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00140.png" id="57_xgvbc"]
+[ext_resource type="Texture2D" uid="uid://cr07s5xdb5abc" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00141.png" id="58_4iebo"]
+[ext_resource type="Texture2D" uid="uid://chj73hexdoxlj" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00142.png" id="59_g2uiw"]
+[ext_resource type="Texture2D" uid="uid://uf73wtvkfofw" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00143.png" id="60_r2uhl"]
+[ext_resource type="Texture2D" uid="uid://dgk707wph1fm7" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00144.png" id="61_uny56"]
+[ext_resource type="Texture2D" uid="uid://by0w7vpn7d5jk" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00145.png" id="62_bdhw2"]
+[ext_resource type="Texture2D" uid="uid://ppch6wy6f7c8" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00146.png" id="63_gfwsq"]
+[ext_resource type="Texture2D" uid="uid://c4saxxre6jd77" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00147.png" id="64_g11ve"]
+[ext_resource type="Texture2D" uid="uid://bqusm7brps74a" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00148.png" id="65_vwvh8"]
+[ext_resource type="Texture2D" uid="uid://d1bg3x3phsdd3" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00149.png" id="66_hejdn"]
+[ext_resource type="Texture2D" uid="uid://c3g8uksjqcioo" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00150.png" id="67_a00tl"]
+[ext_resource type="Texture2D" uid="uid://drllv5twpogtd" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00151.png" id="68_qyy2j"]
+[ext_resource type="Texture2D" uid="uid://ddjhvxakocbf7" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00152.png" id="69_6h17s"]
+[ext_resource type="Texture2D" uid="uid://cndbfe07mqg8y" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00153.png" id="70_7ron8"]
+[ext_resource type="Texture2D" uid="uid://dewmpsxs3l8rv" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00154.png" id="71_v68hg"]
+[ext_resource type="Texture2D" uid="uid://drgh0ofwd41rf" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00155.png" id="72_i7i2l"]
+[ext_resource type="Texture2D" uid="uid://jms4fjocigsg" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00156.png" id="73_su88n"]
+[ext_resource type="Texture2D" uid="uid://d3w64jegppmoj" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00157.png" id="74_msjdu"]
+[ext_resource type="Texture2D" uid="uid://bxqvx5n4rm2qd" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00158.png" id="75_lydtk"]
+[ext_resource type="Texture2D" uid="uid://dss71u81mojs0" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00159.png" id="76_0w4k5"]
+[ext_resource type="Texture2D" uid="uid://ciw0i14ny7q01" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00160.png" id="77_jcal4"]
+[ext_resource type="Texture2D" uid="uid://4jd8v5dn7w4q" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00161.png" id="78_ih8h6"]
+[ext_resource type="Texture2D" uid="uid://dhhuqs1eabumk" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00162.png" id="79_htifb"]
+[ext_resource type="Texture2D" uid="uid://cidddd84lj4pe" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00163.png" id="80_4ejiv"]
+[ext_resource type="Texture2D" uid="uid://damh3fb5clr35" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00164.png" id="81_33244"]
+[ext_resource type="Texture2D" uid="uid://bx5ox6xsu1ssv" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00165.png" id="82_otmlj"]
+[ext_resource type="Texture2D" uid="uid://babfr8yarqxss" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00166.png" id="83_l28sw"]
+[ext_resource type="Texture2D" uid="uid://ftyuk71eh7wu" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00167.png" id="84_w4yr5"]
+[ext_resource type="Texture2D" uid="uid://dwcxstvuju34" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00168.png" id="85_cgesm"]
+[ext_resource type="Texture2D" uid="uid://7rsfxvludae3" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00169.png" id="86_e7kpb"]
+[ext_resource type="Texture2D" uid="uid://b88hmyd7aceep" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00170.png" id="87_0x3lo"]
+[ext_resource type="Texture2D" uid="uid://bpj2usew2sbe5" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00171.png" id="88_4x2hv"]
+[ext_resource type="Texture2D" uid="uid://dbcgiw7wpsmiq" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00172.png" id="89_no2ud"]
+[ext_resource type="Texture2D" uid="uid://bes1mtc0d0nt4" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00173.png" id="90_w2diw"]
+[ext_resource type="Texture2D" uid="uid://7pakuu3dbtju" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00174.png" id="91_5fhv7"]
+[ext_resource type="Texture2D" uid="uid://ctw85sl78fulf" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00175.png" id="92_cw5t2"]
+[ext_resource type="Texture2D" uid="uid://crqm6mkhke7ga" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00176.png" id="93_pbuxq"]
+[ext_resource type="Texture2D" uid="uid://chq14slyyp5ey" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00177.png" id="94_t44g0"]
+[ext_resource type="Texture2D" uid="uid://cu0s2vyx6seaw" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00178.png" id="95_qnj8r"]
+[ext_resource type="Texture2D" uid="uid://c36j1ynbu8hlt" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00179.png" id="96_v13ph"]
+[ext_resource type="Texture2D" uid="uid://cd7wpiig2vddb" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00180.png" id="97_44j4b"]
+[ext_resource type="Texture2D" uid="uid://d0526smxkrx0y" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00181.png" id="98_0foqn"]
+[ext_resource type="Texture2D" uid="uid://4pl4xup5h0ap" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00182.png" id="99_51g03"]
+[ext_resource type="Texture2D" uid="uid://drm4yf81mqw7v" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00183.png" id="100_h7ye2"]
+[ext_resource type="Texture2D" uid="uid://dysux8yqhyyai" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00184.png" id="101_nq25l"]
+[ext_resource type="Texture2D" uid="uid://66xqplrqlw6c" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00185.png" id="102_hsyb2"]
+[ext_resource type="Texture2D" uid="uid://dy6vpf5x4c3v3" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00186.png" id="103_byg7v"]
+[ext_resource type="Texture2D" uid="uid://cyhih2bxmj7dw" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00187.png" id="104_cpj33"]
+[ext_resource type="Texture2D" uid="uid://d2afhboth8r3y" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00188.png" id="105_xpv7g"]
+[ext_resource type="Texture2D" uid="uid://dav4li6m48bn8" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00189.png" id="106_h2dln"]
+[ext_resource type="Texture2D" uid="uid://b7qg3v8c85u7s" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00190.png" id="107_bo0vb"]
+[ext_resource type="Texture2D" uid="uid://cisxygu3ul2i5" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00191.png" id="108_1lant"]
+[ext_resource type="Texture2D" uid="uid://d4caukusjk6i7" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00192.png" id="109_qyowb"]
+[ext_resource type="Texture2D" uid="uid://wokg3dxn2nfd" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00193.png" id="110_hm2cf"]
+[ext_resource type="Texture2D" uid="uid://c1rdj7gjxohel" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00194.png" id="111_tgah7"]
+[ext_resource type="Texture2D" uid="uid://bxecab4rngjs0" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00195.png" id="112_4y6pc"]
+[ext_resource type="Texture2D" uid="uid://d0hhu4yjbmq4a" path="res://assets/animations/Red tank/Tank Animation/Tank Parts/Gun.png" id="113_u6jn4"]
+[ext_resource type="Script" path="res://assets/scripts/Gun.gd" id="114_i8x6b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wh50k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_npv7o")
+"texture": ExtResource("3_34f8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ngje6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d3dm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_28nrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rghdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_scqm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vomii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e8dyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lry53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_seuil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ctfd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0lnaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hqqdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_g6mx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jqb6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_285gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_018o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_n5ad1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1txrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ucp70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_fidsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_v5nfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6xh22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6qs3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ud0nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gkla1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_nh2o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2qy73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_i8qks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_q6csv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_v0rjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_f01sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_6rln6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_xuaqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0aetv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_c31iq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_gqxro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_l77lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_nvu0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_p8f75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_8hd68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_qyc2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_m4jkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_v1cvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_8wq26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_i7ih6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_80psg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_xuc5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_82kdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_qgp0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_mvy2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_anrug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ims4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ndwuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_xgvbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_4iebo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_g2uiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_r2uhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_uny56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_bdhw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_gfwsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_g11ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_vwvh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_hejdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_a00tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_qyy2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_6h17s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_7ron8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_v68hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_i7i2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_su88n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_msjdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_lydtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_0w4k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_jcal4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_ih8h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_htifb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_4ejiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_33244")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_otmlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_l28sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_w4yr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_cgesm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_e7kpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_0x3lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_4x2hv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_no2ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_w2diw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_5fhv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_cw5t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_pbuxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_t44g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_qnj8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_v13ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_44j4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_0foqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_51g03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_h7ye2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_nq25l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_hsyb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_byg7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_cpj33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_xpv7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_h2dln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_bo0vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_1lant")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_qyowb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_hm2cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_tgah7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_4y6pc")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp3w"]
-radius = 33.7339
-height = 104.0
+radius = 59.5199
+height = 172.0
 
 [node name="Player" type="Area2D"]
 z_index = 1
 z_as_relative = false
-position = Vector2(0, 1)
 script = ExtResource("1_s56kt")
 bullet = ExtResource("2_0r83j")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, 0)
-scale = Vector2(0.504, 0.5)
+scale = Vector2(0.1, 0.097)
 sprite_frames = SubResource("SpriteFrames_wh50k")
 animation = &"idle"
-frame_progress = 0.00345589
+frame_progress = 0.932064
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.19209e-07, -4)
+position = Vector2(4, 11)
 rotation = -1.56886
 scale = Vector2(0.504, 0.5)
 shape = SubResource("CapsuleShape2D_6xp3w")
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(35, -4)
+[node name="Gun" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(2, -19)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("113_u6jn4")
+script = ExtResource("114_i8x6b")
+
+[node name="Marker2D" type="Marker2D" parent="Gun"]
+position = Vector2(6.67572e-06, -180)
+scale = Vector2(10, 10)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
