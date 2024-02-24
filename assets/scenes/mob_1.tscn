@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_q7pxu"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1214, 90, 0, 0, 0, 0, 1037, 90, 0, 0, 0, 0, -206, 89)
+"points": PackedVector2Array(0, 0, 0, 0, 1214, 90, 0, 0, 0, 0, 1169, 90, 0, 0, 0, 0, 1037, 90, 0, 0, 0, 0, -206, 89)
 }
-point_count = 3
+point_count = 4
 
 [node name="Mob1Path" type="Path2D"]
 curve = SubResource("Curve2D_q7pxu")

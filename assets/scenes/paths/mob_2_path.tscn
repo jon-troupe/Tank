@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmn1ptpkonu6c"]
+
+[ext_resource type="Script" path="res://assets/scripts/mob_2_path.gd" id="1_mxbj0"]
+[ext_resource type="PackedScene" uid="uid://dulvo8547bh4s" path="res://assets/scenes/mob/mob_2.tscn" id="1_nt77w"]
+
+[sub_resource type="Curve2D" id="Curve2D_i5sxw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 830.764, -168, 0, 0, 0, 0, 545.931, -72, 0, 0, 0, 0, 312.221, -24, 0, 0, 0, 0, 78.5118, -72, 0, 0, 0, 0, -228.232, -176)
+}
+point_count = 5
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(170, 200)
+scale = Vector2(1.09538, 1)
+curve = SubResource("Curve2D_i5sxw")
+script = ExtResource("1_mxbj0")
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(830.764, -168)
+rotation = 2.81651
+
+[node name="RigidBody2D" parent="PathFollow2D" instance=ExtResource("1_nt77w")]
+rotation = 3.14159
+mass = 0.01
+gravity_scale = 0.0

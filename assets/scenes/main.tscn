@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://8u0himu8njsa"]
+[gd_scene load_steps=6 format=3 uid="uid://8u0himu8njsa"]
 
 [ext_resource type="Script" path="res://assets/scenes/main.gd" id="1_00xe4"]
 [ext_resource type="PackedScene" uid="uid://bf1q3koyclvwi" path="res://assets/scenes/player.tscn" id="1_s5fe3"]
 [ext_resource type="PackedScene" uid="uid://dasnmx6tbajoe" path="res://assets/scenes/mob_1.tscn" id="3_hampe"]
 [ext_resource type="PackedScene" uid="uid://dokp6ay50rwpt" path="res://assets/scenes/Level1.tscn" id="4_keevh"]
+[ext_resource type="PackedScene" uid="uid://dmn1ptpkonu6c" path="res://assets/scenes/paths/mob_2_path.tscn" id="5_h1qpc"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_00xe4")
@@ -26,6 +27,9 @@ position = Vector2(32, 40)
 
 [node name="Node2D" parent="." instance=ExtResource("4_keevh")]
 position = Vector2(8, -128)
+
+[node name="Path2D" parent="." instance=ExtResource("5_h1qpc")]
+position = Vector2(170, 208)
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

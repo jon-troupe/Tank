@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dulvo8547bh4s"]
+
+[ext_resource type="Script" path="res://assets/scripts/mob_2.gd" id="1_fsnoo"]
+[ext_resource type="Texture2D" uid="uid://bjc2513p3jsix" path="res://assets/sprite/mob_2.png" id="1_huyyf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kngij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_huyyf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2o5a"]
+size = Vector2(63, 37)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_fsnoo")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0795594, 0.078675)
+sprite_frames = SubResource("SpriteFrames_kngij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_p2o5a")

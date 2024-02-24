@@ -19,11 +19,10 @@ func _process(delta):
 	# Spawns the enemy every set interval then resets timer
 	if(timer > spawnTime):
 		var newMissile = missile.instantiate()
-		get_parent().add_child(newMissile)
+		owner.add_child(newMissile)
 		timer = 2
 
 func hit():
-	print("test")
 	hp -= 1
 	if hp <= 0:
 		queue_free()
