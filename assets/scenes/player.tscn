@@ -449,13 +449,13 @@ animations = [{
 "texture": ExtResource("112_4y6pc")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 60.0
+"name": &"Forward",
+"speed": 40.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp3w"]
-radius = 59.5199
-height = 172.0
+radius = 83.3293
+height = 256.007
 
 [node name="Player" type="Area2D"]
 z_index = 1
@@ -465,23 +465,25 @@ bullet = ExtResource("2_0r83j")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, 0)
-scale = Vector2(0.1, 0.097)
+position = Vector2(10, 0)
+scale = Vector2(0.15, 0.146)
 sprite_frames = SubResource("SpriteFrames_wh50k")
-animation = &"idle"
-frame_progress = 0.949819
+animation = &"Forward"
+frame = 24
+frame_progress = 0.733778
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 11)
+position = Vector2(11, 14)
 rotation = -1.56886
 scale = Vector2(0.504, 0.5)
 shape = SubResource("CapsuleShape2D_6xp3w")
 
 [node name="Gun" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(2, -19)
-scale = Vector2(0.1, 0.1)
+position = Vector2(12, -23)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("113_u6jn4")
+offset = Vector2(160, 0)
 script = ExtResource("114_i8x6b")
 
 [node name="Marker2D" type="Marker2D" parent="Gun"]
