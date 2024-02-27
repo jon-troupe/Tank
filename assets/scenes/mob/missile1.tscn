@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://5sk5ofd0jupu"]
+[gd_scene load_steps=5 format=3 uid="uid://5sk5ofd0jupu"]
 
-[ext_resource type="Texture2D" uid="uid://bv43b5ejspx41" path="res://assets/sprite/missile.png" id="1_2the4"]
 [ext_resource type="Script" path="res://assets/scripts/missile1.gd" id="1_wmwyd"]
-[ext_resource type="Texture2D" uid="uid://dk7cch2vq600d" path="res://assets/sprite/missile_explosion.png" id="3_xa381"]
+[ext_resource type="Texture2D" uid="uid://e3m5ds4bfkfq" path="res://assets/sprite/missile.png" id="2_egdfb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_shkxd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_xa381")
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_egdfb")
 }],
 "loop": false,
 "name": &"Explode",
@@ -16,7 +18,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_2the4")
+"texture": ExtResource("2_egdfb")
 }],
 "loop": true,
 "name": &"Falling",
@@ -38,6 +40,7 @@ metadata/_edit_group_ = true
 scale = Vector2(0.442447, 0.38714)
 sprite_frames = SubResource("SpriteFrames_shkxd")
 animation = &"Explode"
+frame = 1
 frame_progress = 1.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]

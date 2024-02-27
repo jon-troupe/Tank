@@ -3,7 +3,8 @@ extends RigidBody2D
 @export var hp = 2
 var timer = 0
 var spawnTime = 4
-var missile = load("res://assets/scenes/mob/missile1.tscn")
+
+@export var missile : PackedScene
 
 
 # Called when the node enters the scene tree for the first time.

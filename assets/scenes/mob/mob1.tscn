@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qiqrf2ni5cc7"]
+[gd_scene load_steps=6 format=3 uid="uid://qiqrf2ni5cc7"]
 
 [ext_resource type="Script" path="res://assets/scripts/mob1.gd" id="1_d2rsa"]
 [ext_resource type="Texture2D" uid="uid://dhbn1vebjv3w7" path="res://assets/sprite/the_choppa1.png" id="2_jsisi"]
+[ext_resource type="PackedScene" uid="uid://5sk5ofd0jupu" path="res://assets/scenes/mob/missile1.tscn" id="2_yno4a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mo0af"]
 animations = [{
@@ -20,12 +21,14 @@ size = Vector2(198, 69)
 [node name="Mob" type="RigidBody2D"]
 z_index = 1
 z_as_relative = false
+position = Vector2(368, 162)
 collision_layer = 3
 collision_mask = 0
 gravity_scale = 0.0
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_d2rsa")
+missile = ExtResource("2_yno4a")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

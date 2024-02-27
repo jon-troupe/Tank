@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnrbt40a1t35c"]
+
+[ext_resource type="Script" path="res://assets/scripts/mob_leftward_spawner.gd" id="1_l5o0k"]
+[ext_resource type="PackedScene" uid="uid://qiqrf2ni5cc7" path="res://assets/scenes/mob/mob1.tscn" id="2_6ibr5"]
+
+[sub_resource type="Curve2D" id="Curve2D_stin1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 368)
+}
+point_count = 2
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_stin1")
+script = ExtResource("1_l5o0k")
+mob1 = ExtResource("2_6ibr5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.5708
