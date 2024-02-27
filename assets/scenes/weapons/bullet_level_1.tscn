@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://dpl07a2c0n820"]
+
+[ext_resource type="Script" path="res://assets/scripts/bullet_level_1.gd" id="1_rpwb4"]
+[ext_resource type="Texture2D" uid="uid://8274x6nv125c" path="res://assets/animations/basic_red_bullet/frame0000.png" id="2_b4xdi"]
+[ext_resource type="Texture2D" uid="uid://b3vp1r738ox2p" path="res://assets/animations/basic_red_bullet/frame0001.png" id="3_pyddn"]
+[ext_resource type="Texture2D" uid="uid://tssttvljbc2" path="res://assets/animations/basic_red_bullet/frame0002.png" id="4_uhlqh"]
+[ext_resource type="Texture2D" uid="uid://bf1peau0fkxgu" path="res://assets/animations/basic_red_bullet/frame0003.png" id="5_uy1iy"]
+[ext_resource type="Texture2D" uid="uid://uduv5e703bwr" path="res://assets/animations/basic_red_bullet/frame0004.png" id="6_iixhr"]
+[ext_resource type="Texture2D" uid="uid://c5wgxvvd8b8q8" path="res://assets/animations/basic_red_bullet/frame0005.png" id="7_hbydt"]
+[ext_resource type="Texture2D" uid="uid://dqddjkue4enx3" path="res://assets/animations/basic_red_bullet/frame0006.png" id="8_6c0or"]
+[ext_resource type="Texture2D" uid="uid://hbn3t1qufiks" path="res://assets/animations/basic_red_bullet/frame0007.png" id="9_hbafu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01qln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b4xdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pyddn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uhlqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uy1iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iixhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hbydt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6c0or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hbafu")
+}],
+"loop": true,
+"name": &"Shot",
+"speed": 16.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm7fm"]
+size = Vector2(30, 18)
+
+[node name="Area2D" type="Area2D"]
+z_index = 2
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_rpwb4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(18, 26)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_01qln")
+animation = &"Shot"
+frame_progress = 0.0683284
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17.5, 25.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_tm7fm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

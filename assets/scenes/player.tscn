@@ -1,7 +1,7 @@
 [gd_scene load_steps=117 format=3 uid="uid://bf1q3koyclvwi"]
 
 [ext_resource type="Script" path="res://assets/scenes/player.gd" id="1_s56kt"]
-[ext_resource type="PackedScene" uid="uid://dpl07a2c0n820" path="res://assets/scenes/bullet_level_1.tscn" id="2_0r83j"]
+[ext_resource type="PackedScene" uid="uid://dpl07a2c0n820" path="res://assets/scenes/weapons/bullet_level_1.tscn" id="2_0r83j"]
 [ext_resource type="Texture2D" uid="uid://cyscblrqkanjr" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00086.png" id="3_34f8r"]
 [ext_resource type="Texture2D" uid="uid://dwjiurxbj7wxi" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00087.png" id="4_ngje6"]
 [ext_resource type="Texture2D" uid="uid://dj7j4wkrbkxeg" path="res://assets/animations/Red tank/Tank Animation/DPS Tank_00088.png" id="5_d3dm4"]
@@ -487,7 +487,7 @@ offset = Vector2(160, 0)
 script = ExtResource("114_i8x6b")
 
 [node name="Marker2D" type="Marker2D" parent="Gun"]
-position = Vector2(6.67572e-06, -180)
+position = Vector2(46.6667, -246.667)
 scale = Vector2(10, 10)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

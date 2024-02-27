@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd7y68v0k0w87"
-path="res://.godot/imported/tank_bullet.png-1eb631fe71f9a435296058ed8d50b73f.ctex"
+uid="uid://bwtliepf0hspx"
+path="res://.godot/imported/Summer2.png-5f7c50951bb0dc60f064e176b141b079.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/tank_bullet.png"
-dest_files=["res://.godot/imported/tank_bullet.png-1eb631fe71f9a435296058ed8d50b73f.ctex"]
+source_file="res://assets/scenes/levels/Summer2.png"
+dest_files=["res://.godot/imported/Summer2.png-5f7c50951bb0dc60f064e176b141b079.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dokp6ay50rwpt"]
 
-[ext_resource type="Shader" path="res://assets/scenes/Level1mainbackgroundshader.gdshader" id="1_3wsx2"]
-[ext_resource type="Texture2D" uid="uid://bwtliepf0hspx" path="res://assets/scenes/Summer2.png" id="1_armpt"]
+[ext_resource type="Shader" path="res://assets/scenes/shaders/Level1mainbackgroundshader.gdshader" id="1_3wsx2"]
+[ext_resource type="Texture2D" uid="uid://bwtliepf0hspx" path="res://assets/scenes/levels/Summer2.png" id="1_armpt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4euwt"]
 shader = ExtResource("1_3wsx2")
