@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var hp = 2
-var timer = 0
+var timer = 1
 var spawnTime = 4
 
 @export var missile : PackedScene
@@ -20,10 +20,18 @@ func _process(delta):
 	# Spawns the enemy every set interval then resets timer
 	if(timer > spawnTime):
 		var newMissile = missile.instantiate()
-		owner.add_child(newMissile)
+		add_child(newMissile)
 		timer = 2
+		
+	# Check if mob is dead and frees queue if there are no child missiles
+	if (get_child_count() == 3 && hp <= 0) :
+		queue_free()
 
 func hit():
 	hp -= 1
 	if hp <= 0:
-		queue_free()
+		# Sets zero opacity to hide only the parent and allow child missile to stay
+		$AnimatedSprite2D.self_modulate.a = 0
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()
