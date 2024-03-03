@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://gofuspvds010"]
+
+[ext_resource type="Script" path="res://assets/scripts/mob1.gd" id="1_d2rsa"]
+[ext_resource type="PackedScene" uid="uid://5sk5ofd0jupu" path="res://assets/scenes/mob/missile1.tscn" id="2_yno4a"]
+[ext_resource type="Texture2D" uid="uid://da25qdl8qeohq" path="res://assets/animations/helicopters/mob1chopper1.png" id="3_t4en4"]
+[ext_resource type="Texture2D" uid="uid://b75l2cshpodwk" path="res://assets/animations/helicopters/mob1chopper2.png" id="4_nd6o3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mo0af"]
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": ExtResource("3_t4en4")
+}, {
+"duration": 0.1,
+"texture": ExtResource("4_nd6o3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 100.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3yyb"]
+size = Vector2(89, 49)
+
+[node name="Mob" type="RigidBody2D"]
+z_index = 1
+z_as_relative = false
+collision_layer = 3
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_d2rsa")
+missile = ExtResource("2_yno4a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mo0af")
+frame = 1
+frame_progress = 0.859832
+speed_scale = 0.045
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, -3.5)
+shape = SubResource("RectangleShape2D_r3yyb")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(46, -5)
+scale = Vector2(1.2, 1)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

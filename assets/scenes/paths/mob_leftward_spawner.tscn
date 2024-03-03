@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnrbt40a1t35c"]
+[gd_scene load_steps=6 format=3 uid="uid://dnrbt40a1t35c"]
 
 [ext_resource type="Script" path="res://assets/scripts/mob_leftward_spawner.gd" id="1_l5o0k"]
-[ext_resource type="PackedScene" uid="uid://qiqrf2ni5cc7" path="res://assets/scenes/mob/mob1.tscn" id="2_6ibr5"]
+[ext_resource type="PackedScene" uid="uid://gofuspvds010" path="res://assets/scenes/mob/mob_1_chopper.tscn" id="2_l8k8q"]
+[ext_resource type="PackedScene" uid="uid://wvpa8tirwf10" path="res://assets/scenes/mob/mob_2_chopper.tscn" id="3_qle2i"]
+[ext_resource type="PackedScene" uid="uid://d1bfe1g7x8buy" path="res://assets/scenes/mob/mob_3_chopper.tscn" id="4_1rrac"]
 
 [sub_resource type="Curve2D" id="Curve2D_stin1"]
 _data = {
@@ -12,7 +14,9 @@ point_count = 2
 [node name="Path2D" type="Path2D"]
 curve = SubResource("Curve2D_stin1")
 script = ExtResource("1_l5o0k")
-mob1 = ExtResource("2_6ibr5")
+mob1 = ExtResource("2_l8k8q")
+mob2 = ExtResource("3_qle2i")
+mob3 = ExtResource("4_1rrac")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(0, 1)
