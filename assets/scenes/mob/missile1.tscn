@@ -40,8 +40,6 @@ metadata/_edit_group_ = true
 scale = Vector2(0.442447, 0.38714)
 sprite_frames = SubResource("SpriteFrames_shkxd")
 animation = &"Explode"
-frame = 1
-frame_progress = 1.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 z_as_relative = false

@@ -28,13 +28,12 @@ func _process(delta):
 		queue_free()
 
 func hit():
-
-	
 	# Reduces HP and checks if it dies
 	hp -= 1
 	if hp <= 0:
 		# Sets zero opacity to hide only the parent and allow child missile to stay
 		$AnimatedSprite2D.self_modulate.a = 0
+		set_collision_layer_value(2, false)
 		$FlashTimer.stop()
 	else:
 		# Turns the sprite white and starts the timer to return it to normal
