@@ -24,14 +24,25 @@ func _process(delta):
 		timer = 2
 		
 	# Check if mob is dead and frees queue if there are no child missiles
-	if (get_child_count() == 3 && hp <= 0) :
+	if (get_child_count() == 4 && hp <= 0) :
 		queue_free()
 
 func hit():
+
+	
+	# Reduces HP and checks if it dies
 	hp -= 1
 	if hp <= 0:
 		# Sets zero opacity to hide only the parent and allow child missile to stay
 		$AnimatedSprite2D.self_modulate.a = 0
+		$FlashTimer.stop()
+	else:
+		# Turns the sprite white and starts the timer to return it to normal
+		$FlashTimer.start()
+		$AnimatedSprite2D.self_modulate = Color(10,10,10,10)
+
+func _on_flash_timer_timeout():
+	$AnimatedSprite2D.self_modulate = Color(1,1,1,1)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
