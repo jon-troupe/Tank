@@ -34,6 +34,7 @@ func hit():
 	if hp <= 0:
 		# Sets zero opacity to hide only the parent and allow child missile to stay
 		$AnimatedSprite2D.self_modulate.a = 0
+		set_linear_velocity(Vector2(0, 0))
 		$Explode.play()
 		timer = -10
 		set_collision_layer_value(2, false)

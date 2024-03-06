@@ -279,7 +279,9 @@ metadata/_edit_group_ = true
 rotation = -3.14159
 scale = Vector2(0.114, 0.1)
 sprite_frames = SubResource("SpriteFrames_shkxd")
-animation = &"Falling"
+animation = &"Explode"
+frame = 59
+frame_progress = 1.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 z_as_relative = false
