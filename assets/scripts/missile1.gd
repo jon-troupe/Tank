@@ -13,14 +13,18 @@ func _process(_delta):
 	pass
 
 func explode():
-	sleeping = true
+	set_mass(0)
+	set_gravity_scale(0)
+	set_linear_velocity(Vector2(0, 0))
 	var missile1_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
 	$AnimatedSprite2D.play(missile1_types[0])
 	
 func hit():
 	hp -= 1
 	if hp <= 0:
-		queue_free()
+		set_collision_layer_value(1, false)
+		set_collision_layer_value(2, false)
+		explode()
 	
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1bfe1g7x8buy"]
+[gd_scene load_steps=8 format=3 uid="uid://d1bfe1g7x8buy"]
 
 [ext_resource type="Script" path="res://assets/scripts/mob1.gd" id="1_d2rsa"]
 [ext_resource type="PackedScene" uid="uid://5sk5ofd0jupu" path="res://assets/scenes/mob/missile1.tscn" id="2_yno4a"]
 [ext_resource type="Texture2D" uid="uid://v87aliebd3qh" path="res://assets/animations/helicopters/mob3chopper1.png" id="3_bjbss"]
+[ext_resource type="PackedScene" uid="uid://uqthcdo4kpqv" path="res://assets/animations/Animation_scene/explode.tscn" id="3_ehi87"]
 [ext_resource type="Texture2D" uid="uid://dkm7epy0tl5va" path="res://assets/animations/helicopters/mob3chopper2.png" id="4_5upym"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mo0af"]
@@ -25,7 +26,7 @@ size = Vector2(104, 42)
 [node name="Mob" type="RigidBody2D"]
 z_index = 1
 z_as_relative = false
-collision_layer = 3
+collision_layer = 2
 collision_mask = 0
 mass = 0.01
 gravity_scale = 0.0
@@ -34,6 +35,11 @@ contact_monitor = true
 script = ExtResource("1_d2rsa")
 missile = ExtResource("2_yno4a")
 metadata/_edit_group_ = true
+
+[node name="Explode" parent="." instance=ExtResource("3_ehi87")]
+position = Vector2(-3.3875, -3)
+scale = Vector2(0.156238, 0.112186)
+frame_progress = 0.325674
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
@@ -52,5 +58,6 @@ scale = Vector2(1.2, 1)
 [node name="FlashTimer" type="Timer" parent="."]
 wait_time = 0.1
 
+[connection signal="animation_finished" from="Explode" to="." method="_on_explode_animation_finished"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]

@@ -20,11 +20,12 @@ func _process(delta):
 	# Spawns the enemy every set interval then resets timer
 	if(timer > spawnTime):
 		var newMissile = missile.instantiate()
+		# newMissile.set_linear_velocity(Vector2(-300, 100))
 		add_child(newMissile)
 		timer = 2
 		
 	# Check if mob is dead and frees queue if there are no child missiles
-	if (get_child_count() == 4 && hp <= 0) :
+	if (get_child_count() == 5 && hp <= 0 && !$Explode.is_playing()) :
 		queue_free()
 
 func hit():
@@ -33,6 +34,8 @@ func hit():
 	if hp <= 0:
 		# Sets zero opacity to hide only the parent and allow child missile to stay
 		$AnimatedSprite2D.self_modulate.a = 0
+		$Explode.play()
+		timer = -10
 		set_collision_layer_value(2, false)
 		$FlashTimer.stop()
 	else:
@@ -45,3 +48,6 @@ func _on_flash_timer_timeout():
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
+
+func _on_explode_animation_finished():
+	$Explode.stop()
