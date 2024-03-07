@@ -6,11 +6,14 @@ extends Path2D
 @export var mob3: PackedScene
 
 var timer = 0
+var total_timer = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer = timer + delta
-	if timer >= 3 :
+	total_timer = total_timer + delta
+	
+	if timer >= 3 && total_timer < 110 :
 		spawn_mob()
 		timer = 0
 		

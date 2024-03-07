@@ -1,6 +1,6 @@
 extends Node
 
-@export var mob_scene: PackedScene
+@export var boss_scene: PackedScene
 var score
 
 # Called when the node enters the scene tree for the first time.
@@ -12,13 +12,15 @@ func _ready():
 func _process(_delta):
 	pass
 
-
-func game_over():
-	$MobTimer.stop() 
-
 func new_game():
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
 
 func _on_start_timer_timeout():
-	$MobTimer.start() 
+	$BossTimer.start() 
+
+func _on_boss_timer_timeout():
+	var boss = boss_scene.instantiate()
+	boss.position = $Marker2D.position
+	add_child(boss)
+	$BossTimer.stop()

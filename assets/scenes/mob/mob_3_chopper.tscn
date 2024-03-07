@@ -34,7 +34,6 @@ max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_d2rsa")
 missile = ExtResource("2_yno4a")
-metadata/_edit_group_ = true
 
 [node name="Explode" parent="." instance=ExtResource("3_ehi87")]
 position = Vector2(-3.3875, -3)
@@ -52,8 +51,8 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_r3yyb")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(42, 0)
-scale = Vector2(1.2, 1)
+position = Vector2(129, -1)
+scale = Vector2(1.08363, 1)
 
 [node name="FlashTimer" type="Timer" parent="."]
 wait_time = 0.1

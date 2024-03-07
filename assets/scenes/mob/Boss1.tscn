@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6261wwvbl5d"]
+
+[ext_resource type="Script" path="res://assets/scripts/Boss1.gd" id="1_mnhru"]
+[ext_resource type="Texture2D" uid="uid://cm0clumnnow1y" path="res://assets/sprite/Boss/JEROM_bossA_CC-BY-3.png" id="1_n04x4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf13a"]
+atlas = ExtResource("1_n04x4")
+region = Rect2(0, 0, 264, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q15nl"]
+atlas = ExtResource("1_n04x4")
+region = Rect2(264, 0, 264, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmtu7"]
+atlas = ExtResource("1_n04x4")
+region = Rect2(528, 0, 264, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctqhy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf13a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q15nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmtu7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulwca"]
+size = Vector2(561, 166)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+script = ExtResource("1_mnhru")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.15909, 2)
+sprite_frames = SubResource("SpriteFrames_ctqhy")
+frame_progress = 0.891147
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ulwca")
