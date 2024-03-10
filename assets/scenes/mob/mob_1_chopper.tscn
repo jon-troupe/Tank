@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://gofuspvds010"]
+[gd_scene load_steps=7 format=3 uid="uid://gofuspvds010"]
 
 [ext_resource type="Script" path="res://assets/scripts/mob1.gd" id="1_d2rsa"]
 [ext_resource type="PackedScene" uid="uid://5sk5ofd0jupu" path="res://assets/scenes/mob/missile1.tscn" id="2_yno4a"]
@@ -20,12 +20,10 @@ animations = [{
 "speed": 25.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3yyb"]
-size = Vector2(89, 49)
-
 [node name="Mob" type="RigidBody2D"]
 z_index = 1
 z_as_relative = false
+position = Vector2(-3, 12)
 collision_layer = 2
 collision_mask = 0
 mass = 0.01
@@ -39,15 +37,13 @@ metadata/_edit_group_ = true
 [node name="Explode" parent="." instance=ExtResource("3_se6ws")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5, -2)
 sprite_frames = SubResource("SpriteFrames_8tyyc")
 animation = &"Static"
 frame_progress = 0.105658
 speed_scale = 1.5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10.5, -3.5)
-shape = SubResource("RectangleShape2D_r3yyb")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(56, -4, 53, -4, 48, -4, 52, 6, 52, 10, 51, 12, 48, 12, 43, 4, 40, 2, 37, 1, 15, 8, 11, 11, 9.8, 18, 10, 19, 13, 21, 10, 24, -16, 25, -20, 19, -24, 19, -28, 23, -29, 22, -31, 20, -31, 16, -32, 14, -31, 3, -29, -2, -22, -8, -19, -10, -13, -11, -12, -17, -19, -18, -34, -19, -40, -19, -44, -21, -44.7, -23, -35, -24, 29, -25, 34, -23, 45, -19, 48, -23, 54, -22)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(118, -4)
@@ -55,6 +51,9 @@ scale = Vector2(-1.07469, 1)
 
 [node name="FlashTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-11, 14)
 
 [connection signal="animation_finished" from="Explode" to="." method="_on_explode_animation_finished"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

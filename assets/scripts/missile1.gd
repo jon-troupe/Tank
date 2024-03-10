@@ -13,6 +13,7 @@ func _process(_delta):
 	pass
 
 func explode():
+	$CollisionShape2D.set_deferred("disabled", true)
 	set_mass(0.1)
 	set_gravity_scale(0)
 	set_linear_velocity(Vector2(0, 0))
@@ -22,9 +23,7 @@ func explode():
 func hit():
 	hp -= 1
 	if hp <= 0:
-		set_collision_layer_value(1, false)
-		set_collision_layer_value(2, false)
-		set_collision_mask_value(1, false)
+		$CollisionShape2D.set_deferred("disabled", true)
 		explode()
 	
 func _on_animated_sprite_2d_animation_finished():

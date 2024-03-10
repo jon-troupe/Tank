@@ -20,12 +20,13 @@ func _process(delta):
 	# Spawns the enemy every set interval then resets timer
 	if(timer > spawnTime):
 		var newMissile = missile.instantiate()
+		newMissile.position = $Marker2D.position
 		# newMissile.set_linear_velocity(Vector2(-300, 100))
 		add_child(newMissile)
 		timer = 2
 		
 	# Check if mob is dead and frees queue if there are no child missiles
-	if (get_child_count() == 5 && hp <= 0 && !$Explode.is_playing()) :
+	if (get_child_count() == 6 && hp <= 0 && !$Explode.is_playing()) :
 		queue_free()
 
 func hit():
@@ -37,7 +38,7 @@ func hit():
 		set_linear_velocity(Vector2(0, 0))
 		$Explode.play()
 		timer = -10
-		set_collision_layer_value(2, false)
+		$CollisionPolygon2D.set_deferred("disabled", true)
 		$FlashTimer.stop()
 	else:
 		# Turns the sprite white and starts the timer to return it to normal
