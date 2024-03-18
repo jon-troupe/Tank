@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3kjo3s6nosua"]
+
+[ext_resource type="Script" path="res://assets/scripts/Laser_green.gd" id="1_0cs2x"]
+[ext_resource type="Texture2D" uid="uid://ciqto3hsdpt44" path="res://assets/sprite/Projectiles/Laser Sprites/17.png" id="1_oiee8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32etd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oiee8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+z_index = -2
+collision_mask = 0
+script = ExtResource("1_0cs2x")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_32etd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(40, -10, 52, -10, 61, -8, 67, -5, 68, -2.97237e-06, 66, 5, 55, 10, 25, 9, -16, 6, -77, 2, -90, 3.93391e-06, -77, -0.999997, -14, -5, 20, -9)

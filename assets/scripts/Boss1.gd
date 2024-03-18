@@ -1,15 +1,52 @@
 extends RigidBody2D
 
 @export var hp = 50
+@export var green_laser: PackedScene
+var timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	go_left()
 	$AnimatedSprite2D.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	timer = timer + delta
+	
+	
+	# Movement logic
+	if position.x < 250:
+		print("testright")
+		go_right()
+	
+	if position.x > 650:
+		print("testleft")
+		go_left()
+	
+	# Calls laser to attack on a timer
+	if timer >= 2: 
+		laser()
+
+func laser():
+	# Shoots main laser barrage
+		var laser1 = green_laser.instantiate()
+		laser1.position = $Marker2D.position
+		add_child(laser1)
+		
+		var laser2 = green_laser.instantiate()
+		laser2.position = $Marker2D2.position
+		add_child(laser2)
+		
+		var laser3 = green_laser.instantiate()
+		laser3.position = $Marker2D3.position
+		add_child(laser3)
+		
+		var laser4 = green_laser.instantiate()
+		laser4.position = $Marker2D4.position
+		add_child(laser4)
+		
+		timer = 0
 
 func hit():
 	# Reduces HP and checks if it dies
@@ -24,3 +61,9 @@ func hit():
 
 func _on_flash_timer_timeout():
 	$AnimatedSprite2D.self_modulate = Color(1,1,1,1)
+
+func go_left():
+	set_linear_velocity(Vector2(-100, 0))
+
+func go_right():
+	set_linear_velocity(Vector2(100, 0))
