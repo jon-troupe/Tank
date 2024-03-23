@@ -14,9 +14,8 @@ metadata/_edit_vertical_guides_ = [-221.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_4euwt")
-offset_left = -15.0
 offset_top = -555.0
-offset_right = 2289.0
+offset_right = 2304.0
 offset_bottom = 741.0
 texture = ExtResource("1_armpt")
 stretch_mode = 1

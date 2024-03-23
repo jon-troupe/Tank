@@ -16,12 +16,10 @@ func _process(delta):
 	
 	
 	# Movement logic
-	if position.x < 250:
-		print("testright")
+	if position.x < 400:
 		go_right()
 	
-	if position.x > 650:
-		print("testleft")
+	if position.x > 600:
 		go_left()
 	
 	# Calls laser to attack on a timer
@@ -32,18 +30,22 @@ func laser():
 	# Shoots main laser barrage
 		var laser1 = green_laser.instantiate()
 		laser1.position = $Marker2D.position
+		laser1.set_linear_velocity(Vector2(0, 500))
 		add_child(laser1)
 		
 		var laser2 = green_laser.instantiate()
 		laser2.position = $Marker2D2.position
+		laser2.set_linear_velocity(Vector2(0, 500))
 		add_child(laser2)
 		
 		var laser3 = green_laser.instantiate()
 		laser3.position = $Marker2D3.position
+		laser3.set_linear_velocity(Vector2(0, 500))
 		add_child(laser3)
 		
 		var laser4 = green_laser.instantiate()
 		laser4.position = $Marker2D4.position
+		laser4.set_linear_velocity(Vector2(0, 500))
 		add_child(laser4)
 		
 		timer = 0
