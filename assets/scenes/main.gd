@@ -22,3 +22,8 @@ func _on_boss_timer_timeout():
 	boss.position = $Marker2D.position
 	add_child(boss)
 	$BossTimer.stop()
+
+func game_over():
+	$Player.queue_free()
+	$BossTimer.stop()
+	$StartTimer.stop()
